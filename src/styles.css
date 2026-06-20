@@ -1,0 +1,144 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Michaela's Beauty Bar — design system
+ * Warm taupe brown (#4b4037), soft cream, blush accents.
+ * Display serif: Cormorant Garamond. Body/UI: Jost.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-cream: var(--cream);
+  --color-sand: var(--sand);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  --background: oklch(0.977 0.008 84);
+  --foreground: oklch(0.32 0.016 66);
+
+  --card: oklch(0.992 0.005 84);
+  --card-foreground: oklch(0.32 0.016 66);
+
+  --popover: oklch(0.992 0.005 84);
+  --popover-foreground: oklch(0.32 0.016 66);
+
+  /* #4b4037 warm taupe brown */
+  --primary: oklch(0.37 0.018 66);
+  --primary-foreground: oklch(0.97 0.01 84);
+
+  --secondary: oklch(0.93 0.012 78);
+  --secondary-foreground: oklch(0.37 0.018 66);
+
+  --muted: oklch(0.945 0.01 80);
+  --muted-foreground: oklch(0.52 0.016 68);
+
+  /* soft blush accent */
+  --accent: oklch(0.86 0.035 32);
+  --accent-foreground: oklch(0.34 0.03 40);
+
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.98 0.01 84);
+
+  --border: oklch(0.89 0.012 74);
+  --input: oklch(0.89 0.012 74);
+  --ring: oklch(0.37 0.018 66);
+
+  --cream: oklch(0.97 0.012 86);
+  --sand: oklch(0.9 0.018 76);
+
+  --sidebar: oklch(0.977 0.008 84);
+  --sidebar-foreground: oklch(0.32 0.016 66);
+  --sidebar-primary: oklch(0.37 0.018 66);
+  --sidebar-primary-foreground: oklch(0.97 0.01 84);
+  --sidebar-accent: oklch(0.93 0.012 78);
+  --sidebar-accent-foreground: oklch(0.37 0.018 66);
+  --sidebar-border: oklch(0.89 0.012 74);
+  --sidebar-ring: oklch(0.37 0.018 66);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  .wordmark {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--color-muted-foreground);
+  }
+
+  .container-x {
+    width: 100%;
+    margin-inline: auto;
+    max-width: 80rem;
+    padding-inline: 1.5rem;
+  }
+}
